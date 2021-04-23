@@ -99,6 +99,7 @@ kafka_df = spark \
     .readStream \
     .format('kafka') \
     .option('kafka.bootstrap.servers', "fluster-namenode.com:6667") \
+    .option("failOnDataLoss", "false") \
     .option("startingOffsets", "earliest") \
     .option('subscribe', 'e117_qpredict') \
     .load()
